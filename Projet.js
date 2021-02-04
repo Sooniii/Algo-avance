@@ -6,7 +6,18 @@ let beginTime = new Date;
 const fs = require("fs");
 data = fs.readFileSync(tab[4],"utf8");
 
-let stringOut = "test";
+let json = JSON.parse(data);
+
+let moviesTab = [];
+for (i = 0; i < json.length; i++){
+    let title = json[i].title;
+    let fDate = json[i].release_date;
+    let annéeMovie = Math.floor((((((fDate) / 60) / 60) / 24) / 365) + 1970);
+    let nameAndDate = (title + " (" + annéeMovie + ")");
+    moviesTab.push(nameAndDate);
+}
+
+let stringOut = JSON.stringify(moviesTab,null,'\t');
 fs.writeFileSync(tab[5],stringOut);
 
 let endTime = new Date;
