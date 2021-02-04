@@ -1,4 +1,4 @@
-//node Loic.js –action search_date ./movies.json <year> <sorted>
+//node Story4.js –action search_date ./movies.json <year> <sorted>
 
 let tab = process.argv;
 
@@ -7,8 +7,6 @@ data = fs.readFileSync(tab[4],"utf8");
 
 let json = JSON.parse(data)
 
-let jsonOut = JSON.stringify(json,null,'\t')
-fs.writeFileSync(tab[5],jsonOut);
 
 if ((tab[6]) === 'true') {
 
