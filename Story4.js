@@ -1,6 +1,7 @@
 //node Story4.js –action search_date ./movies.json <year> <sorted>
 
 let tab = process.argv;
+let beginTime = new Date;
 
 const fs = require("fs");
 data = fs.readFileSync(tab[4],"utf8");
@@ -40,3 +41,8 @@ for (i = 0; i < json.length; i++){
 }
 
 search(json)
+
+let endTime = new Date;
+let appTime = endTime - beginTime;
+
+console.log("L'appli a mis " + appTime + "ms pour afficher tout les films de " + tab[5]);
