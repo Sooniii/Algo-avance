@@ -10,3 +10,4 @@
 .DS_Store/
 movies.out.json
 movies.sort.date.json
+movies.sort.titre.json

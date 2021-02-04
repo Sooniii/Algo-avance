@@ -1,4 +1,4 @@
-//node Projet.js -action transform ./movies.json ./movies.out.json
+//node Story1.js -action transform ./movies.json ./movies.out.json
 
 let tab = process.argv;
 let beginTime = new Date;
@@ -23,4 +23,4 @@ fs.writeFileSync(tab[5],stringOut);
 let endTime = new Date;
 let appTime = endTime - beginTime;
 
-console.log("L'appli a mis " + appTime + "ms pour être executé.");
+console.log("L'appli a mis " + appTime + "ms pour afficher tout les films dans le fichier movies.out.json");
