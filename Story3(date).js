@@ -8,15 +8,14 @@ data = fs.readFileSync(tab[4],"utf8");
 
 let json = JSON.parse(data)
 
-let jsonOut = JSON.stringify(json,null,'\t')
-fs.writeFileSync(tab[5],jsonOut);
-
+//Fonction permettant de changer la position de deux objets d'un tableau
 function swap(json,a,b){
     let temp = json[a];
     json[a] = json[b]
     json[b] = temp
 }
- 
+
+//Fonction permettant de trier un tableau
 function sort(json){
     for(let i = json.length-1; i>=1 ;i--){
         for(let j = 0; j<=i-1;j++){
@@ -30,9 +29,11 @@ function sort(json){
 
 let jsonSortByDate = sort(json);
 
+//Ecrit dans le fichier Json la liste des films triés par date
 let stringOut = JSON.stringify(jsonSortByDate,null,'\t');
 fs.writeFileSync(tab[5],stringOut);
 
+//Benchmark
 let endTime = new Date;
 let appTime = endTime - beginTime;
 

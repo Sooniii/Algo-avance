@@ -8,6 +8,7 @@ data = fs.readFileSync(tab[4],"utf8");
 
 let json = JSON.parse(data);
 
+//Affiche dans un fichier Json le nom et l'année de tout les films
 let moviesTab = [];
 for (i = 0; i < json.length; i++){
     let title = json[i].title;
@@ -17,9 +18,11 @@ for (i = 0; i < json.length; i++){
     moviesTab.push(nameAndDate);
 }
 
+//Ecrit dans le fichier Json la liste des films
 let stringOut = JSON.stringify(moviesTab,null,'\t');
 fs.writeFileSync(tab[5],stringOut);
 
+//Benchmark
 let endTime = new Date;
 let appTime = endTime - beginTime;
 

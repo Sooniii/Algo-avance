@@ -11,3 +11,4 @@
 movies.out.json
 movies.sort.date.json
 movies.sort.titre.json
+movies.search.year.json
