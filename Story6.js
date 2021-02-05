@@ -1,4 +1,4 @@
-//node Story6.js –action search_key_word ./movies.sort.date.json <genre> <key_word>
+//node Story6.js -action transform ./movies.json ./movies.out.json
 
 let beginTime = new Date;
 
