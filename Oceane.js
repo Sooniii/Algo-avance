@@ -1,24 +1,33 @@
 //node Oceane.js -action transform ./movies.json ./movies.out.json
 
-/*       tri Ordre alphabetique 
+let beginTime = new Date;
 
-let tab = process.argv
+const fs = require('fs')
+const request = require('request')
 
-const fs = require("fs");
-data = fs.readFileSync(tab[4],"utf8");
-
-let json = JSON.parse(data)
-json.sort(tri);
-
-let jsonOut = JSON.stringify(json,null,'\t')
-fs.writeFileSync(tab[5],jsonOut);
-
-function tri(a,b)
-{
-	if (a.title < b.title) return -1;
-	else if (a.title == b.title) return 0;
-	else return 1;
+const download = (url, path, callback) => {
+    request.head(url, (err, res, body) => {
+        request(url)
+        .pipe(fs.createWriteStream(path))
+        .on('close', callback)
+    })
 }
-//console.log(jsonOut);
+const url = "https://image.tmdb.org/t/p/w500/qI9eTP3NpJlxTk3oMBvfz8Awwkw.jpg";
+const path = './images/image.png'
 
+download(url, path, () => {
+    console.log('Done!')
+})
+
+
+/*
+var requestURL = "https://image.tmdb.org/t/p/w500/qI9eTP3NpJlxTk3oMBvfz8Awwkw.jpg";
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
 */
+
+
+let endTime = new Date;
+let appTime = endTime - beginTime;
+
+console.log("L'appli a mis " + appTime + "ms pour être executé.")
