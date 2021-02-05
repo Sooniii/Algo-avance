@@ -1,4 +1,4 @@
-//node Theo.js –action search_key_word ./movies.sort.date.json <genre> <key_word>
+//node Story5.js –action search_key_word ./movies.sort.date.json <genre> <key_word>
 
 let tab = process.argv;
 let beginTime = new Date;

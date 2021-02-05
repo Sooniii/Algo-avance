@@ -29,8 +29,8 @@ function sort(json){
 
 let jsonSortByTitle = sort(json);
 
-//Ecrit dans le fichier Json la liste des films triés par titre
-let stringOut = JSON.stringify(jsonSortByTitle,null,'\t');
+//Ecrit dans le fichier Json la liste des films ranger par ordre alphabetique par titre
+let stringOut = JSON.stringify(jsonSortByTitle,null,'\t');  //mise en page
 fs.writeFileSync(tab[5],stringOut);
 
 //Benchmark

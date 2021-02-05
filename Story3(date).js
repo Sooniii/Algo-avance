@@ -29,7 +29,7 @@ function sort(json){
 
 let jsonSortByDate = sort(json);
 
-//Ecrit dans le fichier Json la liste des films triés par date
+//Ecrit dans le fichier Json la liste des films triés par date, par ordre croissant
 let stringOut = JSON.stringify(jsonSortByDate,null,'\t');
 fs.writeFileSync(tab[5],stringOut);
 
